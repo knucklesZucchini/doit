@@ -13,7 +13,7 @@
         <!--Do It!-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="ViewController" customModule="Doit" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="BYZ-38-t0r" customClass="TasksViewController" customModule="Doit" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -46,6 +46,7 @@
                     <connections>
                         <outlet property="tableView" destination="Bvx-iL-ANg" id="n3B-aV-87E"/>
                         <segue destination="DYI-Se-8Di" kind="show" identifier="addSegue" id="xMB-ze-HW4"/>
+                        <segue destination="RCt-qg-AzH" kind="show" identifier="selectTaskSegue" id="4Yu-nQ-3PT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -134,6 +135,50 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AZq-il-2da" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="692.20389805097454"/>
+        </scene>
+        <!--Complet Task View Controller-->
+        <scene sceneID="2Hd-ax-8zw">
+            <objects>
+                <viewController id="RCt-qg-AzH" customClass="CompletTaskViewController" customModule="Doit" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="ydB-i8-uBd"/>
+                        <viewControllerLayoutGuide type="bottom" id="acQ-Ge-zRP"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ojf-fJ-4oS" customClass="Co">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XWy-t9-1qV">
+                                <rect key="frame" x="157" y="84" width="61" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h2W-vn-gD8">
+                                <rect key="frame" x="154" y="139" width="67" height="30"/>
+                                <state key="normal" title="Complete"/>
+                                <connections>
+                                    <action selector="CompleteTapped:" destination="RCt-qg-AzH" eventType="touchUpInside" id="aMm-r8-37L"/>
+                                    <action selector="completeTapped:" destination="RCt-qg-AzH" eventType="touchUpInside" id="SUd-tN-19t"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="XWy-t9-1qV" firstAttribute="centerX" secondItem="Ojf-fJ-4oS" secondAttribute="centerX" id="YF3-a2-t16"/>
+                            <constraint firstItem="XWy-t9-1qV" firstAttribute="top" secondItem="ydB-i8-uBd" secondAttribute="bottom" constant="20" id="aJ3-Wg-47T"/>
+                            <constraint firstItem="h2W-vn-gD8" firstAttribute="top" secondItem="XWy-t9-1qV" secondAttribute="bottom" constant="25" id="cL3-bd-MUL"/>
+                            <constraint firstItem="h2W-vn-gD8" firstAttribute="centerX" secondItem="Ojf-fJ-4oS" secondAttribute="centerX" id="fdI-0T-Fon"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="UILabel" destination="XWy-t9-1qV" id="4AF-Sm-Kww"/>
+                        <outlet property="taskLable" destination="XWy-t9-1qV" id="dsH-QA-z6m"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UGc-dl-3bh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="969" y="790"/>
         </scene>
     </scenes>
 </document>
